@@ -1,0 +1,25 @@
+{
+  "schedule": [
+    {
+      "day": "Mondays",
+      "time": "9:00 AM",
+      "location": "New Bedford YMCA",
+      "type": "Vinyasa Flow",
+      "link": "https://ymcasouthcoast.org"
+    },
+    {
+      "day": "Wednesdays",
+      "time": "5:30 PM",
+      "location": "Studio 31 Pilates",
+      "type": "Yogalates",
+      "link": "https://studio31pilates.org/"
+    },
+    {
+      "day": "Sundays",
+      "time": "10:30 AM",
+      "location": "New Bedford YMCA",
+      "type": "Slow Flow",
+      "link": "https://ymcasouthcoast.org"
+    }
+  ]
+}

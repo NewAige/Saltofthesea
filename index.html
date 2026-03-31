@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salt of the Sea Yoga | Ellen Selley</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal: #1a6b83;
+            --seafoam: #77c9d4;
+            --sun: #f9a03f;
+            --sand: #fdfaf0;
+            --text: #333;
+        }
+
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: var(--text); background-color: white; line-height: 1.6; }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            padding: 20px;
+        }
+
+        .logo { max-width: 400px; width: 90%; margin-bottom: 20px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--teal); margin: 0; }
+        .subtitle { font-size: 1.1rem; letter-spacing: 3px; text-transform: uppercase; color: var(--sun); font-weight: 400; }
+
+        section { padding: 80px 10% ; max-width: 1200px; margin: auto; }
+
+        /* About & Services */
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--teal); }
+        .accent-border { width: 50px; height: 3px; background: var(--sun); margin-bottom: 20px; }
+
+        /* Calendar Section */
+        #calendar-section { background-color: var(--sand); border-radius: 15px; margin-top: 50px; padding: 40px; }
+        .schedule-card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--seafoam);
+        }
+        .day { font-weight: bold; color: var(--teal); width: 120px; }
+        .time { color: var(--sun); font-weight: bold; }
+        .location { flex-grow: 1; margin: 0 20px; }
+
+        footer { text-align: center; padding: 40px; background: var(--teal); color: white; }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .schedule-card { flex-direction: column; text-align: center; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.svg" alt="Salt of the Sea Yoga" class="logo">
+    <p class="subtitle">Studio & Wellness</p>
+    <h1>Find Your Flow on the South Coast</h1>
+</header>
+
+<section id="about">
+    <div class="grid">
+        <div>
+            <div class="accent-border"></div>
+            <h2>Meet Ellen Selley</h2>
+            <p><strong>500HR Sva Ha Yoga Certified</strong></p>
+            <p>Bringing the calming energy of the ocean to the mat, Ellen provides a soulful yoga experience rooted in the Sva Ha tradition. Whether you are looking for a deep meditative flow or physical restoration, her classes are designed to reconnect you with your inner rhythm.</p>
+            <p>Ellen currently teaches at the <strong>New Bedford YMCA</strong>, guest teaches at premier South Coast studios, and offers personalized <strong>private lessons</strong>.</p>
+        </div>
+        <div>
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Yoga Session" style="width:100%; border-radius: 15px;">
+        </div>
+    </div>
+</section>
+
+<section id="where-to-find-me">
+    <div style="text-align: center;">
+        <h2>Where to Find Me</h2>
+        <p>Catch a class at a local studio or join me at the Y.</p>
+    </div>
+
+    <div id="calendar-section">
+        <div id="schedule-container">
+            <p style="text-align: center;">Loading schedule...</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Salt of the Sea Yoga | South Coast, MA</p>
+    <p>Contact for Private Lessons: ellen@saltoftheseayoga.com</p>
+</footer>
+
+<script>
+    // This script looks for a file named 'schedule.json' in the same folder
+    async function loadSchedule() {
+        try {
+            const response = await fetch('schedule.json');
+            const data = await response.json();
+            const container = document.getElementById('schedule-container');
+            container.innerHTML = ''; // Clear loading message
+
+            data.schedule.forEach(item => {
+                const card = `
+                    <div class="schedule-card">
+                        <div class="day">${item.day}</div>
+                        <div class="time">${item.time}</div>
+                        <div class="location"><strong>${item.location}</strong><br><small>${item.type}</small></div>
+                        <a href="${item.link}" style="color: var(--teal); text-decoration: none; font-weight: bold;">Details →</a>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        } catch (error) {
+            console.error('Error loading schedule:', error);
+            document.getElementById('schedule-container').innerHTML = '<p>Please check back later for the updated schedule.</p>';
+        }
+    }
+
+    window.onload = loadSchedule;
+</script>
+
+</body>
+</html>
