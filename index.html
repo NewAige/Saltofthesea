@@ -40,6 +40,20 @@
         h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--teal); }
         .accent-border { width: 50px; height: 3px; background: var(--sun); margin-bottom: 20px; }
 
+        /* Headshots grid */
+        .headshots-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .headshots-grid img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
         /* Calendar Section */
         #calendar-section { background-color: var(--sand); border-radius: 15px; margin-top: 50px; padding: 40px; }
         .schedule-card {
@@ -76,7 +90,6 @@
 
 <header>
     <img src="logo.svg" alt="Salt of the Sea Yoga" class="logo">
-    <p class="subtitle">Studio & Wellness</p>
     <h1>Find Your Flow on the South Coast</h1>
 </header>
 
@@ -89,8 +102,9 @@
             <p>Bringing the calming energy of the ocean to the mat, Ellen provides a soulful yoga experience rooted in the Sva Ha tradition. Whether you are looking for a deep meditative flow or physical restoration, her classes are designed to reconnect you with your inner rhythm.</p>
             <p>Ellen currently teaches at the <strong>New Bedford YMCA</strong>, guest teaches at premier South Coast studios, and offers personalized <strong>private lessons</strong>.</p>
         </div>
-        <div>
-            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Yoga Session" style="width:100%; border-radius: 15px;">
+        <div class="headshots-grid">
+            <img src="Headshota.png" alt="Ellen Alves Headshot 1">
+            <img src="headshotb.png" alt="Ellen Alves Headshot 2">
         </div>
     </div>
 </section>
