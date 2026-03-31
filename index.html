@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salt of the Sea Yoga | Ellen Selley</title>
+    <title>Salt of the Sea Yoga | Ellen Alves</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -57,6 +57,13 @@
         .time { color: var(--sun); font-weight: bold; }
         .location { flex-grow: 1; margin: 0 20px; }
 
+        /* Showcase Section */
+        #showcase { background-color: var(--seafoam); color: white; border-radius: 15px; margin: 50px auto; padding: 40px; max-width: 1200px; text-align: center; }
+        #showcase h2 { color: white; margin-bottom: 20px; }
+        .showcase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .showcase-item { background: rgba(255, 255, 255, 0.2); padding: 20px; border-radius: 10px; }
+        .showcase-item img { width: 100%; border-radius: 8px; margin-bottom: 10px; }
+
         footer { text-align: center; padding: 40px; background: var(--teal); color: white; }
 
         @media (max-width: 768px) {
@@ -77,13 +84,33 @@
     <div class="grid">
         <div>
             <div class="accent-border"></div>
-            <h2>Meet Ellen Selley</h2>
-            <p><strong>500HR Sva Ha Yoga Certified</strong></p>
+            <h2>Meet Ellen Alves</h2>
+            <p><strong>200 YTT Certified</strong></p>
             <p>Bringing the calming energy of the ocean to the mat, Ellen provides a soulful yoga experience rooted in the Sva Ha tradition. Whether you are looking for a deep meditative flow or physical restoration, her classes are designed to reconnect you with your inner rhythm.</p>
             <p>Ellen currently teaches at the <strong>New Bedford YMCA</strong>, guest teaches at premier South Coast studios, and offers personalized <strong>private lessons</strong>.</p>
         </div>
         <div>
             <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Yoga Session" style="width:100%; border-radius: 15px;">
+        </div>
+    </div>
+</section>
+
+<section id="showcase">
+    <h2>Showcase</h2>
+    <p>A glimpse into my practice and the beautiful community we are building.</p>
+    <div class="showcase-grid">
+        <!-- Placeholder for showcase items -->
+        <div class="showcase-item">
+            <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=400&q=80" alt="Showcase Image 1">
+            <p>Community flow at the studio.</p>
+        </div>
+        <div class="showcase-item">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=400&q=80" alt="Showcase Image 2">
+            <p>Finding balance and peace.</p>
+        </div>
+        <div class="showcase-item">
+            <img src="https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?auto=format&fit=crop&w=400&q=80" alt="Showcase Image 3">
+            <p>Sunset meditations.</p>
         </div>
     </div>
 </section>
