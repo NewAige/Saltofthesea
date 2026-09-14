@@ -2,9 +2,16 @@
   "schedule": [
     {
       "day": "Mondays",
-      "time": "9:00 AM",
+      "time": "8:00 AM",
       "location": "New Bedford YMCA",
-      "type": "Vinyasa Flow",
+      "type": "Yogalates",
+      "link": "https://ymcasouthcoast.org"
+    },
+    {
+      "day": "Mondays",
+      "time": "6:00 PM",
+      "location": "New Bedford YMCA",
+      "type": "Restorative Yoga",
       "link": "https://ymcasouthcoast.org"
     },
     {
@@ -15,10 +22,17 @@
       "link": "https://studio31pilates.org/"
     },
     {
-      "day": "Sundays",
-      "time": "10:30 AM",
-      "location": "New Bedford YMCA",
-      "type": "Slow Flow",
+      "day": "Thursdays",
+      "time": "8:00 AM",
+      "location": "Fall River YMCA",
+      "type": "Yogalates",
+      "link": "https://ymcasouthcoast.org"
+    },
+    {
+      "day": "Thursdays",
+      "time": "9:00 AM",
+      "location": "Fall River YMCA",
+      "type": "Yoga Sculpt",
       "link": "https://ymcasouthcoast.org"
     }
   ]
